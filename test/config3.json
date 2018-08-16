@@ -1,0 +1,36 @@
+{
+	"Ocean":
+	{
+		"size_x":50,
+		"size_y":20,
+		"count":0,
+		"countStone":50,
+		"countCoral":50,
+		"countPrey":0,
+		"countPredator":100
+	},
+	"Stone":
+	{
+		"name":"#",
+		"lifeTime":50
+	},
+	"Coral":
+	{
+		"name":"*",
+		"lifeTime":5,
+		"timeBirth":10
+	},
+	"Prey":
+	{
+		"name":"f",
+		"lifeTime":10,
+		"timeBirth":2
+	},
+	"Predator":
+	{
+		"name":"s",
+		"lifeTime":20,
+		"timeBirth":2,
+		"feedCycle":6
+	}
+}
