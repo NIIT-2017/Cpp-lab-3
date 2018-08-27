@@ -1,4 +1,4 @@
-#include "gtest/gtest.h"
+ï»¿#include "gtest/gtest.h"
 #include "common.h"
 
 #include "ocean.h"
@@ -61,7 +61,7 @@ TEST(lab3,task1_5)
 {
     Ocean *atlantic =new Ocean;
 	
-    char ch[200] = "Âðåìÿ öèêëà ïèòàíèÿ";
+    char ch[200] = "Ð’Ñ€ÐµÐ¼Ñ Ñ†Ð¸ÐºÐ»Ð° Ð¿Ð¸Ñ‚Ð°Ð½Ð¸Ñ";
 	
 	
     int result=atlantic->fill(ch, 1, 9);
