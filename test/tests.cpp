@@ -9,7 +9,7 @@
 #include "Object.h"
 
 
-TEST(lab3,task1_1)
+TEST(lab3,ocean_1)
 {
     Ocean *atlantic =new Ocean;
 	
@@ -21,7 +21,7 @@ TEST(lab3,task1_1)
 }
 
 
-TEST(lab3,task1_2)
+TEST(lab3,ocean_2)
 {
     Ocean *atlantic =new Ocean;
 	
@@ -34,7 +34,7 @@ TEST(lab3,task1_2)
 }
 
 
-TEST(lab3,task1_3)
+TEST(lab3,ocean_3)
 {
     Ocean *atlantic =new Ocean;
 	
@@ -47,7 +47,7 @@ TEST(lab3,task1_3)
 }
 
 
-TEST(lab3,task1_4)
+TEST(lab3,ocean_4)
 {
     Ocean *atlantic =new Ocean;
 	
@@ -62,7 +62,7 @@ TEST(lab3,task1_4)
 }
 
 
-TEST(lab3,task1_5)
+TEST(lab3,ocean_5)
 {
     Ocean *atlantic =new Ocean;
 	
