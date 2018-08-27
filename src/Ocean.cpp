@@ -1,4 +1,4 @@
-#include "Ocean.h"
+﻿#include "Ocean.h"
 #include "Stone.h"
 #include "Coral.h"
 #include "Prey.h"
@@ -10,7 +10,6 @@
 #include <fstream>
 #include <cstdio> 
 #include <stdio.h>  
-
 
 using namespace std;
 

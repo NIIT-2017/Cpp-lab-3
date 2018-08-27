@@ -1,13 +1,14 @@
-#include "common.h"
+﻿#include "common.h"
 #include "ocean.h"
 #include <ctime>
 #include <cstdlib>
 #include <iostream>
 #include <locale.h>
+
 using namespace std;
 int main()
 {
-	setlocale(LC_ALL, "RUS");
+	setlocale(0, "");
 	srand(time(nullptr));
 	
 	Ocean *atlantic = new Ocean;
