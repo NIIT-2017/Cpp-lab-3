@@ -1,7 +1,12 @@
 #include "gtest/gtest.h"
 #include "common.h"
-
 #include "ocean.h"
+#include "Stone.h"
+#include "Coral.h"
+#include "Prey.h"
+#include "Predator.h"
+#include "Cell.h"
+#include "Object.h"
 
 
 TEST(lab3,task1_1)
