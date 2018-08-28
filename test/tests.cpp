@@ -32,6 +32,7 @@ TEST(lab3, ocean2)
 
 TEST(lab3, ocean3)
 {
+	
 	Ocean *atlantic = new Ocean("Ocean_Parametrs2.txt");
 	EXPECT_EQ(atlantic->getSize(), 0);
 	atlantic->addObjects(2, ObjType::CORAL);
