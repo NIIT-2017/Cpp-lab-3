@@ -1,20 +1,25 @@
-Длина=60
-Ширина=30
+Length=60
+Width=30
 
-Stone=25
 
-Coral=28
-Продолжительность жизни=23
-Цикл размножения=5
+Stone=30
+
+
+
+Coral=15
+liveTime=15
+timeBirth=4
+
 
 
 Prey=60
-Продолжительность жизни=30
-Время цикла питания=15
-Цикл размножения=3
- 
+liveTime=25
+feedCycle=15
+timeBirth=3
 
-Predator=90
-Продолжительность жизни=35
-Время цикла питания=10
-Цикл размножения=4
+
+
+Predator=80
+liveTime=30
+feedCycle=10
+timeBirth=4

@@ -66,13 +66,13 @@ bool Ocean::read(char* name)
 int Ocean::fill(char *a, int b, int k)
 {
 	
-	if (k == 1 && strcmp(a, "Длина") == 0)
+	if (k == 1 && strcmp(a, "Length") == 0)
 	{
 		M = b;
 		return k;
 	}
 
-	if (k == 2 && strcmp(a, "Ширина") == 0)
+	if (k == 2 && strcmp(a, "Width") == 0)
 	{
 		N = b;
 		return k;
@@ -90,13 +90,13 @@ int Ocean::fill(char *a, int b, int k)
 		return k;
 	}
 	
-	if (k == 5 && strcmp(a, "Продолжительность жизни") == 0)
+	if (k == 5 && strcmp(a, "liveTime") == 0)
 	{
 		 val.liveTime1=b;
 		return k;
 	}
 
-	if (k == 6 && strcmp(a, "Цикл размножения") == 0)
+	if (k == 6 && strcmp(a, "timeBirth") == 0)
 	{
 		val.cycle_r1 = b;
 		return k;
@@ -108,19 +108,19 @@ int Ocean::fill(char *a, int b, int k)
 		return k;
 	}
 
-	if (k == 8 && strcmp(a, "Продолжительность жизни") == 0)
+	if (k == 8 && strcmp(a, "liveTime") == 0)
 	{
 		val.liveTime2 = b;
 		return k;
 	}
 
-	if (k == 9 && strcmp(a, "Время цикла питания") == 0)
+	if (k == 9 && strcmp(a, "feedCycle") == 0)
 	{
 		val.hunger2 = b;
 		return k;
 	}
 
-	if (k == 10 && strcmp(a, "Цикл размножения") == 0)
+	if (k == 10 && strcmp(a, "timeBirth") == 0)
 	{
 		val.cycle_r2 = b;
 		return k;
@@ -132,19 +132,19 @@ int Ocean::fill(char *a, int b, int k)
 		return k;
 	}
 
-	if (k == 12 && strcmp(a, "Продолжительность жизни") == 0)
+	if (k == 12 && strcmp(a, "liveTime") == 0)
 	{
 		val.liveTime3 = b;
 		return k;
 	}
 
-	if (k == 13 && strcmp(a, "Время цикла питания") == 0)
+	if (k == 13 && strcmp(a, "feedCycle") == 0)
 	{
 		val.hunger3 = b;
 		return k;
 	}
 
-	if (k == 14 && strcmp(a, "Цикл размножения") == 0)
+	if (k == 14 && strcmp(a, "timeBirth") == 0)
 	{
 		val.cycle_r3 = b;
 		return k;
