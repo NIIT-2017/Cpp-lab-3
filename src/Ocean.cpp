@@ -3,13 +3,12 @@
 #include "Coral.h"
 #include "Prey.h"
 #include "Predator.h"
-#include <iostream>
-#include <cstdlib>
 #include <ctime>
 #include <string>
 #include <fstream>
 #include <cstdio> 
-#include <stdio.h>  
+#include <stdio.h> 
+
 
 using namespace std;
 

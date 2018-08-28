@@ -4,6 +4,9 @@
 #include "common.h"
 #include "Cell.h"
 #include <list>
+#include <cstring>
+#include <cstdlib>
+#include <iostream>
 
 class Ocean
 {

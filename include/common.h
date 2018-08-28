@@ -1,6 +1,10 @@
 #ifndef _COMMON_H_
 #define _COMMON_H_
 
+#include <cstring>
+#include <cstdlib>
+#include <iostream>
+
 typedef size_t coord_t;
 
 struct Pair

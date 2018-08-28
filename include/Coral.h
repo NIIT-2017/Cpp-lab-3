@@ -8,9 +8,9 @@
 
 class Coral :public Object
 {
-	int tp;        // “ип
-	int liveTime;  // ƒлина жизни
-	int cycle_r;   // ÷икл размножени¤
+	int tp;        // тип
+	int liveTime;  // длина жизни
+	int cycle_r;   // цикл размножения
 	static unsigned int count;
 	
 public:

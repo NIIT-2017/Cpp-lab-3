@@ -8,8 +8,8 @@
 
 class Stone :public Object
 {
-	int tp;        // “ип
-	int liveTime;  // ƒлина жизни
+	int tp;        // тип
+	int liveTime;  // длина жизни
 	static unsigned int count;
 	
 public:
