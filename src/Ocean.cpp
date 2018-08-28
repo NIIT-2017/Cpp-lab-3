@@ -9,6 +9,7 @@
 #include <ctime>
 #include <fstream>
 #include <stdio.h>
+#include <sys/ioctl.h>
 #include <sys/select.h>
 #include <termios.h>
 #include <stropts.h>
