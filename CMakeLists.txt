@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 # Make PROJECT_SOURCE_DIR, PROJECT_BINARY_DIR, and PROJECT_NAME available.
-set(PROJECT_NAME task) 
+set(PROJECT_NAME task1) 
 project(${PROJECT_NAME})
 
 set(CMAKE_CXX_FLAGS "-g -Wall")
@@ -18,15 +18,35 @@ include_directories(${COMMON_INCLUDES})
 file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
 
 
-set(SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
-list(REMOVE_ITEM SRC_FILES ${PROJECT_SOURCE_DIR}/src/main.cpp)
+set(SRC_FILES ${PROJECT_SOURCE_DIR}/src/Ocean.cpp
+              ${PROJECT_SOURCE_DIR}/src/Cell.cpp
+              ${PROJECT_SOURCE_DIR}/src/Object.cpp
+              ${PROJECT_SOURCE_DIR}/src/Stone.cpp
+              ${PROJECT_SOURCE_DIR}/src/Coral.cpp
+              ${PROJECT_SOURCE_DIR}/src/Prey.cpp
+              ${PROJECT_SOURCE_DIR}/src/Predator.cpp)
+
+#list(REMOVE_ITEM SRC_FILES ${PROJECT_SOURCE_DIR}/src/main.cpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
 add_library(task_lib ${SRC_FILES})
-add_executable(task ${PROJECT_SOURCE_DIR}/src/main.cpp)
+add_executable(task ${PROJECT_SOURCE_DIR}/src/common.cpp)
 
 target_link_libraries(task task_lib)
+
+add_custom_command(TARGET task POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${PROJECT_SOURCE_DIR}/test/config.json"
+        $<TARGET_FILE_DIR:task>)
+add_custom_command(TARGET task POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${PROJECT_SOURCE_DIR}/test/config2.json"
+        $<TARGET_FILE_DIR:task>)
+add_custom_command(TARGET task POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${PROJECT_SOURCE_DIR}/test/config3.json"
+        $<TARGET_FILE_DIR:task>)
 
 ################################
 # Testing
@@ -54,7 +74,7 @@ if (BUILD_TESTS)
   target_link_libraries(runUnitTests gtest gtest_main)
 
   # Extra linking for the project.
-  #target_link_libraries(runUnitTests task_lib)
+  target_link_libraries(runUnitTests task_lib)
 
   # This is so you can do 'make test' to see all your tests run, instead of
   # manually running the executable runUnitTests to see those specific tests.
