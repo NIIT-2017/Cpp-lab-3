@@ -8,6 +8,7 @@
 #include <fstream>
 #include <cstdio> 
 #include <stdio.h> 
+#include <cstring>
 
 
 using namespace std;
