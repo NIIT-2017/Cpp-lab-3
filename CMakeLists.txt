@@ -15,38 +15,18 @@ set(CMAKE_CXX_FLAGS "-g -Wall")
 #----------------------------------------------------------------------------
 set(COMMON_INCLUDES ${PROJECT_SOURCE_DIR}/include)
 include_directories(${COMMON_INCLUDES})
+
 file(GLOB TEST_SRC_FILES ${PROJECT_SOURCE_DIR}/test/*.cpp)
+file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 
-
-set(SRC_FILES ${PROJECT_SOURCE_DIR}/src/Ocean.cpp
-              ${PROJECT_SOURCE_DIR}/src/Cell.cpp
-              ${PROJECT_SOURCE_DIR}/src/Object.cpp
-              ${PROJECT_SOURCE_DIR}/src/Stone.cpp
-              ${PROJECT_SOURCE_DIR}/src/Coral.cpp
-              ${PROJECT_SOURCE_DIR}/src/Prey.cpp
-              ${PROJECT_SOURCE_DIR}/src/Predator.cpp)
-
-#list(REMOVE_ITEM SRC_FILES ${PROJECT_SOURCE_DIR}/src/main.cpp)
+list(REMOVE_ITEM SRC_FILES ${PROJECT_SOURCE_DIR}/src/main.cpp)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_library(task_lib ${SRC_FILES})
-add_executable(task ${PROJECT_SOURCE_DIR}/src/common.cpp)
+add_library(task1_lib ${SRC_FILES})
+add_executable(task1 ${PROJECT_SOURCE_DIR}/src/main.cpp)
 
-target_link_libraries(task task_lib)
-
-add_custom_command(TARGET task POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "${PROJECT_SOURCE_DIR}/test/config.json"
-        $<TARGET_FILE_DIR:task>)
-add_custom_command(TARGET task POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "${PROJECT_SOURCE_DIR}/test/config2.json"
-        $<TARGET_FILE_DIR:task>)
-add_custom_command(TARGET task POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "${PROJECT_SOURCE_DIR}/test/config3.json"
-        $<TARGET_FILE_DIR:task>)
+target_link_libraries(task1 task1_lib)
 
 ################################
 # Testing
@@ -74,7 +54,7 @@ if (BUILD_TESTS)
   target_link_libraries(runUnitTests gtest gtest_main)
 
   # Extra linking for the project.
-  target_link_libraries(runUnitTests task_lib)
+  target_link_libraries(runUnitTests task1_lib)
 
   # This is so you can do 'make test' to see all your tests run, instead of
   # manually running the executable runUnitTests to see those specific tests.
