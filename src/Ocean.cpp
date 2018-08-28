@@ -9,6 +9,7 @@
 #include <cstdio> 
 #include <stdio.h> 
 #include <cstring>
+#include <iostream>
 
 
 using namespace std;
@@ -206,7 +207,7 @@ void Ocean::run()
 {
 	char name[200];
 	cout << "Введите имя файла настроек" << endl;
-	gets_s(name);
+	cin >> name;
 
 	if (!read(name)) return;
 
