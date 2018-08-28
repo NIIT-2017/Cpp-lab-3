@@ -12,15 +12,17 @@
  TEST(lab3,ocean_1)
 {
     Ocean *atlantic =new Ocean;
+    char ch[200] = "Test1.txt"
 		
-    bool result=atlantic->read("Test1.txt");
+    bool result=atlantic->read(ch);
      EXPECT_EQ(1,result);
 }
  TEST(lab3,ocean_2)
 {
     Ocean *atlantic =new Ocean;	
+    char ch[200] = "Test1.txt"
 	
-    bool result=atlantic->read("Test2.txt");
+    bool result=atlantic->read(ch);
      EXPECT_EQ(1,result);
 }
  TEST(lab3,ocean_3)
