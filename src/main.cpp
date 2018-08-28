@@ -1,4 +1,4 @@
-#include "ocean.h"
+#include "Ocean.h"
 #include <ctime>
 #include <cstdlib>
 #include <iostream>
