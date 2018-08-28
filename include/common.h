@@ -2,6 +2,7 @@
 #ifndef _COMMON_H_
 #define _COMMON_H_
 
+typedef unsigned int size_t;
 typedef size_t coord_t;
 
 struct Pair
