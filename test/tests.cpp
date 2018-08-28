@@ -10,7 +10,7 @@
 
 TEST(lab3, ocean1)
 {
-	Ocean *atlantic = new Ocean("Ocean_Parametrs.txt");
+	Ocean *atlantic = new Ocean("OceanParametrs.txt");
 	EXPECT_EQ(atlantic->getSize(), 0);
 	atlantic->addObjects(100);
 	EXPECT_EQ(atlantic->getSize(), 100);
@@ -20,7 +20,7 @@ TEST(lab3, ocean1)
 
 TEST(lab3, ocean2)
 {
-	Ocean *atlantic = new Ocean("Ocean_Parametrs.txt");
+	Ocean *atlantic = new Ocean("OceanParametrs.txt");
 	EXPECT_EQ(atlantic->getSize(), 0);
 	atlantic->addObjects(96, ObjType::CORAL);
 	EXPECT_EQ(Coral::getCount(), 96);
@@ -33,7 +33,7 @@ TEST(lab3, ocean2)
 TEST(lab3, ocean3)
 {
 	
-	Ocean *atlantic = new Ocean("Ocean_Parametrs2.txt");
+	Ocean *atlantic = new Ocean("OceanParametrs2.txt");
 	EXPECT_EQ(atlantic->getSize(), 0);
 	atlantic->addObjects(2, ObjType::CORAL);
 	atlantic->addObjects(2, ObjType::STONE);
