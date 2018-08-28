@@ -17,8 +17,8 @@ protected:
 	virtual void breeding();
 	static unsigned int count;
 	
-	size_t liveTime;
-	size_t liveBreeding;
+	unsigned int liveTime;
+	unsigned int liveBreeding;
 };
 
 

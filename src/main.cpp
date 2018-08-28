@@ -13,8 +13,8 @@ int main()
 {
 	srand(time(nullptr));
 	Ocean *atlantic = new Ocean("Ocean_Parametrs.txt");
-	atlantic->addObjects(100);
+	atlantic->addObjects(1000);
 	atlantic->run();
-	
+	delete atlantic;
 	return 0;
 }

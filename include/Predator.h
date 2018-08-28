@@ -16,7 +16,7 @@ protected:
 	void breeding();
 	bool food();
 	static unsigned int count;
-	size_t timeFood;
+	unsigned int timeFood;
 };
 
 

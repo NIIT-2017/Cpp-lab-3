@@ -2,8 +2,7 @@
 #ifndef _COMMON_H_
 #define _COMMON_H_
 
-typedef unsigned int size_t;
-typedef size_t coord_t;
+typedef unsigned int coord_t;
 
 struct Pair
 {
@@ -22,20 +21,20 @@ inline bool Clamp(int value, int min, int max)
 }
 struct Values
 {
-	size_t N = 40;
-	size_t M = 100;
+	unsigned int N = 40;
+	unsigned int M = 100;
 
-	size_t LIVE_TIME_STONE = 10;
+	unsigned int LIVE_TIME_STONE = 10;
 
-	size_t LIVE_TIME_CORAL = 15;
-	size_t BREED_TIME_CORAL = 3;
+	unsigned int LIVE_TIME_CORAL = 15;
+	unsigned int BREED_TIME_CORAL = 3;
 
-	size_t LIVE_TIME_PREY = 5;
-	size_t BREED_TIME_PREY = 3;
+	unsigned int LIVE_TIME_PREY = 5;
+	unsigned int BREED_TIME_PREY = 3;
 
-	size_t LIVE_TIME_PREDATOR = 9;
-	size_t BREED_TIME_PREDATOR = 3;
-	size_t FOOD_TIME_PREDATOR = 5;
+	unsigned int LIVE_TIME_PREDATOR = 9;
+	unsigned int BREED_TIME_PREDATOR = 3;
+	unsigned int FOOD_TIME_PREDATOR = 5;
 };
 
 

@@ -20,8 +20,8 @@ public:
 protected:
 	static unsigned int count;
 	void setRelationship(relationship);
-	size_t liveBreeding = 5;
-	size_t num = 0; // будет увеличиваться, пока время размножения не закончится. нужно, для того, чтобы организовать цикл с ростом коралла
+	unsigned int liveBreeding = 5;
+	unsigned int num = 0; // будет увеличиваться, пока время размножения не закончится. нужно, для того, чтобы организовать цикл с ростом коралла
 	relationship rel = relationship::PARENT;
 	
 };

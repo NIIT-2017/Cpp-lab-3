@@ -23,7 +23,7 @@ Ocean::Ocean(const std::string & path)
 	
 	string param[10];
 
-	size_t i{ 0 };
+	unsigned int i{ 0 };
 	while (!fin.eof())
 	{
 		getline(fin, param[i++]);
@@ -45,17 +45,17 @@ Ocean::Ocean(const std::string & path)
 	fin.close();
 
 	cells = new Cell*[global.N];
-	for (size_t i = 0; i < global.N; i++)
+	for (unsigned int i = 0; i < global.N; i++)
 	{
 		cells[i] = new Cell[global.M];
-		for (size_t j = 0; j < global.M; j++)
+		for (unsigned int j = 0; j < global.M; j++)
 			cells[i][j].init(Pair{ j, i }, this);
 	}
 }
 
 Ocean::~Ocean()
 {
-	for (size_t i = 0; i < global.N; i++)
+	for (unsigned int i = 0; i < global.N; i++)
 		delete[] cells[i];
 	delete[] cells;
 	liveObject.clear();
@@ -63,9 +63,9 @@ Ocean::~Ocean()
 
 void Ocean::print() const
 {
-	for (size_t i = 0; i < global.N; i++)
+	for (unsigned int i = 0; i < global.N; i++)
 	{
-		for (size_t j = 0; j < global.M; j++)
+		for (unsigned int j = 0; j < global.M; j++)
 			std::cout <<
 			(cells[i][j].getObject() ?
 				cells[i][j].getObject()->getName() : '.');
@@ -77,8 +77,8 @@ void Ocean::addObjects(int count)
 {
 	while (count>0)
 	{
-		size_t x = rand() % global.M;
-		size_t y = rand() % global.N;
+		unsigned int x = rand() % global.M;
+		unsigned int y = rand() % global.N;
 		if (cells[y][x].getObject())
 			continue;
 		else
@@ -112,8 +112,8 @@ void Ocean::addObjects(int count, ObjType type)
 {
 	while (count>0)
 	{
-		size_t x = rand() % global.M;
-		size_t y = rand() % global.N;
+		unsigned int x = rand() % global.M;
+		unsigned int y = rand() % global.N;
 		if (cells[y][x].getObject())
 			continue;
 		else
@@ -227,7 +227,7 @@ Cell * Ocean::getCell(Pair crd) const
 
 int Ocean::run()
 {
-	size_t end = 0;
+	unsigned int end = 0;
 	while (1)
 	{
 		end = isEnd();
@@ -275,7 +275,7 @@ Values Ocean::getGlobal()
 	return global;
 }
 
-size_t Ocean::getSize()
+unsigned int Ocean::getSize()
 {
 	return liveObject.size();
 }

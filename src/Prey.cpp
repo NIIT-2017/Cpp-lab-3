@@ -41,8 +41,8 @@ void Prey::move()
 	Direction k; 
 	Pair crd = this->cell->getPair();
 	Pair old_crd = crd;
-	size_t N = cell->getOcean()->getGlobal().N;
-	size_t M = cell->getOcean()->getGlobal().M;
+	unsigned int N = cell->getOcean()->getGlobal().N;
+	unsigned int M = cell->getOcean()->getGlobal().M;
 	do
 	{
 		k = static_cast<Direction>(rand() % 8);
@@ -115,17 +115,17 @@ void Prey::breeding()
 {
 	if (liveBreeding == 0)
 	{
-		size_t x = this->cell->getPair().x;
-		size_t y = this->cell->getPair().y;
+		unsigned int x = this->cell->getPair().x;
+		unsigned int y = this->cell->getPair().y;
 		Ocean * o = this->cell->getOcean();
 		bool breed = false;
-		size_t N = cell->getOcean()->getGlobal().N;
-		size_t M = cell->getOcean()->getGlobal().M;
-		for (size_t i = x - 1; i <= x + 1; i++)
+		unsigned int N = cell->getOcean()->getGlobal().N;
+		unsigned int M = cell->getOcean()->getGlobal().M;
+		for (unsigned int i = x - 1; i <= x + 1; i++)
 		{
 			if (!Clamp(i, 0, M-1))
 				continue;
-			for (size_t j = y - 1; j <= y + 1; j++)
+			for (unsigned int j = y - 1; j <= y + 1; j++)
 			{
 				if (!Clamp(j, 0, N-1))
 					continue;

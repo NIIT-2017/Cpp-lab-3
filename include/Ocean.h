@@ -33,7 +33,7 @@ public:
 	int run();
 	int isEnd();
 	Values getGlobal();
-	size_t getSize();
+	unsigned int getSize();
 };
 
 

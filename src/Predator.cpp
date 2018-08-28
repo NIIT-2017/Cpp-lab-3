@@ -47,17 +47,17 @@ void Predator::breeding()
 {
 	if (liveBreeding == 0)
 	{
-		size_t x = this->cell->getPair().x;
-		size_t y = this->cell->getPair().y;
+		unsigned int x = this->cell->getPair().x;
+		unsigned int y = this->cell->getPair().y;
 		Ocean * o = this->cell->getOcean();
 		bool breed = false;
-		size_t M = cell->getOcean()->getGlobal().M;
-		size_t N = cell->getOcean()->getGlobal().N;
-		for (size_t i = x - 1; i <= x + 1; i++)
+		unsigned int M = cell->getOcean()->getGlobal().M;
+		unsigned int N = cell->getOcean()->getGlobal().N;
+		for (unsigned int i = x - 1; i <= x + 1; i++)
 		{
 			if (!Clamp(i, 0, M - 1))
 				continue;
-			for (size_t j = y - 1; j <= y + 1; j++)
+			for (unsigned int j = y - 1; j <= y + 1; j++)
 			{
 				if (!Clamp(j, 0, N - 1))
 					continue;
@@ -83,8 +83,8 @@ bool Predator::food()
 	int y = this->cell->getPair().y;
 	Ocean * o = this->cell->getOcean();
 	bool food = false;
-	size_t N = cell->getOcean()->getGlobal().N;
-	size_t M = cell->getOcean()->getGlobal().M;
+	unsigned int N = cell->getOcean()->getGlobal().N;
+	unsigned int M = cell->getOcean()->getGlobal().M;
  	if (timeFood < cell->getOcean()->getGlobal().FOOD_TIME_PREDATOR / 2)
 	{
 		if (timeFood == 0)

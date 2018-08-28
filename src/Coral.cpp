@@ -22,8 +22,8 @@ void Coral::breed()
 	if (liveBreeding == 0 && rel == relationship::PARENT)
 	{
 		num++;
-		size_t x = this->cell->getPair().x;
-		size_t y = this->cell->getPair().y;
+		unsigned int x = this->cell->getPair().x;
+		unsigned int y = this->cell->getPair().y;
 		Ocean * o = this->cell->getOcean();
 		for (int i = x - num; i <= x + num; i++)
 		{

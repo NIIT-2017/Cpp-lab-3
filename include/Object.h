@@ -8,7 +8,7 @@
 #define PREY_N 'f'
 #define PREDATOR_N 'S'
 
-enum class ObjType : size_t {STONE,CORAL,PREY,PREDATOR};
+enum class ObjType : unsigned int {STONE,CORAL,PREY,PREDATOR};
 
 class Cell;
 class Object
