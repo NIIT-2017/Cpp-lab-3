@@ -6,9 +6,13 @@
 #include "Predator.h"
 #include <iostream>
 #include <cstdlib>
-#include <conio.h>
 #include <ctime>
 #include <fstream>
+#include <stdio.h>
+#include <sys/select.h>
+#include <termios.h>
+#include <stropts.h>
+int _kbhit();
 
 Ocean::Ocean(const std::string & path)
 {
@@ -239,16 +243,16 @@ int Ocean::run()
 				(*obj).second->live();
 		clock_t now = clock();
 		while (clock() < now + CLOCKS_PER_SEC/100);
-		system("cls");
+		system("clear");
 		print();
 	}
 }
 
-int Ocean::isEnd() // 1 - íàæàòà Q, 2 - Íåò æèâûõ îáåêòîâ, 3 - Îñòàëñÿ îäèí âèä æèâûõ îáúåêòîâ
-					// 0 - âñ¸ õîðîøî
+int Ocean::isEnd() // 1 - Ð½Ð°Ð¶Ð°Ñ‚Ð° Q, 2 - ÐÐµÑ‚ Ð¶Ð¸Ð²Ñ‹Ñ… Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð², 3 - ÐžÑÑ‚Ð°Ð»ÑÑ Ð¾Ð´Ð¸Ð½ Ð²Ð¸Ð´ Ð¶Ð¸Ð²Ñ‹Ñ… Ð¾Ð±ÑŠÐµÐºÑ‚Ð¾Ð²
+					// 0 - Ð’ÑÑ‘ Ñ…Ð¾Ñ€Ð¾ÑˆÐ¾
 {
 	
-	if (kbhit() && toupper(getch()) == 'Q')
+	if (_kbhit() && toupper(cin.get()) == 'Q')
 	{	
 		//system("cls");
 		std::cout << "Good Bye!\n";
@@ -278,4 +282,23 @@ Values Ocean::getGlobal()
 unsigned int Ocean::getSize()
 {
 	return liveObject.size();
+}
+
+int _kbhit() {
+    static const int STDIN = 0;
+    static bool initialized = false;
+
+    if (! initialized) {
+        // Use termios to turn off line buffering
+        termios term;
+        tcgetattr(STDIN, &term);
+        term.c_lflag &= ~ICANON;
+        tcsetattr(STDIN, TCSANOW, &term);
+        setbuf(stdin, NULL);
+        initialized = true;
+    }
+
+    int bytesWaiting;
+    ioctl(STDIN, FIONREAD, &bytesWaiting);
+    return bytesWaiting;
 }
