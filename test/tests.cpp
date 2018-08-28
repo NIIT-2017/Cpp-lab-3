@@ -67,7 +67,7 @@ TEST(lab3,ocean_5)
 {
     Ocean *atlantic =new Ocean;
 	
-    char ch[200] = "Время цикла питания";
+    char ch[200] = "feedCycle";
 	
 	
     int result=atlantic->fill(ch, 1, 9);
