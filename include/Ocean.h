@@ -18,6 +18,8 @@ private:
 	//std::list<Object*> stuff;
 	std::map<Pair, Object*> liveObject;
 	Values global;
+	bool read(const std::string &);
+	int fill(const char*, int, int);
 public:
 	Ocean(const std::string &);
 	~Ocean();
