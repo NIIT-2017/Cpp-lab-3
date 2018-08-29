@@ -75,4 +75,9 @@ COMMAND ${CMAKE_COMMAND} -E copy_if_different
 "${PROJECT_SOURCE_DIR}/test/Test1.txt"
 $<TARGET_FILE_DIR:task1>)
 
+add_custom_command(TARGET task1 POST_BUILD
+COMMAND ${CMAKE_COMMAND} -E copy_if_different
+"${PROJECT_SOURCE_DIR}/test/Test2.txt"
+$<TARGET_FILE_DIR:task1>)
+
 endif()
