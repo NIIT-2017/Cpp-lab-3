@@ -1,10 +1,20 @@
-5
-5
-20
-20
-3
-10
-5
-9
-3
-5
+
+Length = 5
+
+Width = 5
+
+Live_Time_Stone = 20
+
+Live_Time_Coral = 20
+
+Breed_Time_Coral = 3
+
+Live_Time_Prey = 10
+
+Breed_Time_Prey = 5
+
+Live_Time_Predator = 9
+
+Breed_Time_Predator = 3
+
+Food_Time_Predator = 5 
