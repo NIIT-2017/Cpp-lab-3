@@ -65,7 +65,7 @@ bool Ocean::read(const std::string & path)
 	char *str1, *str2;
 	int k=1;
 
-	while (getline(file, s1)) 
+	while (getline(fin, s1)) 
 	{ 
 		if (s1.size()==0) continue;
 		
@@ -84,13 +84,12 @@ bool Ocean::read(const std::string & path)
 				k++;
 			}
 	}
-
+	fin.close();
 	if (k != 11)
 	{
 		cout << "Not enough data in the file" << endl;
 		return false;
 	}
-	fin.close();
 	return true;
 }
 
