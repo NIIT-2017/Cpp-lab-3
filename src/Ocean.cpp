@@ -41,7 +41,7 @@ bool Ocean::read(const std::string & path)
 		cout << "File is not open" << endl;
 	}
 	
-	string param[10];
+	
 	int counter = 1;
 	string s1;
 	char * str1, str2;
@@ -49,9 +49,10 @@ bool Ocean::read(const std::string & path)
 	{
 		if(!s1.size()) continue;
 		str1 = strtok((char*)s1.c_str(), " =");
-		str2 = strtok(NULL, "\n");
+		str2 = strtok(NULL, (char*)"\n");
 		if (str1)
-			if (fill(str1, stoi(str2), counter) != counter)
+			
+			if (fill(str1, stoi((string)str2), counter) != counter)
 			{
 				cout << "Error reading the file" << endl;
 				return false;
