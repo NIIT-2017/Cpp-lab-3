@@ -68,7 +68,7 @@ bool Ocean::read(const std::string & path)
 	return true;
 }
 
-void Ocean::fill (const char * str, int value, int count)
+int Ocean::fill (const char * str, int value, int count)
 {
 	switch(count)
 	{
