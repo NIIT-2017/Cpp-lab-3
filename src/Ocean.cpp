@@ -48,7 +48,21 @@ Ocean::Ocean(const std::string & path)
 	global.BREED_TIME_PREDATOR = stoi(param[8]);
 	global.FOOD_TIME_PREDATOR = stoi(param[9]);
 	fin.close();
-
+	
+	
+	cout << global.N << endl;
+	cout << global.M << endl;
+	cout << global.LIVE_TIME_STONE << endl;
+	cout << global.LIVE_TIME_CORAL << endl;
+	cout << global.BREED_TIME_CORAL << endl;
+	
+	cout << global.LIVE_TIME_PREY << endl;
+	cout << global.BREED_TIME_PREY << endl;
+	
+	cout << global.LIVE_TIME_PREDATOR << endl;
+	cout << global.BREED_TIME_PREDATOR << endl;
+	cout << global.FOOD_TIME_PREDATOR << endl;
+	
 	cells = new Cell*[global.N];
 	for (unsigned int i = 0; i < global.N; i++)
 	{
