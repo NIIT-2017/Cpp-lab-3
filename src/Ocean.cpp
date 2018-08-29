@@ -43,7 +43,7 @@ bool Ocean::read(const std::string & path)
 	
 	
 	int counter = 1;
-	string s1;
+	/*string s1;
 	char * str1;
 	char * str2;
 	while(getline(fin, s1))
@@ -60,8 +60,32 @@ bool Ocean::read(const std::string & path)
 			}
 		counter++;
 			
+	}*/
+	string s1;
+	char *str1, *str2;
+	int k=1;
+
+	while (getline(file, s1)) 
+	{ 
+		if (s1.size()==0) continue;
+		
+		str1=strtok((char*)s1.c_str(), "=");
+
+		str2 = str1;
+		str1 = strtok(NULL, "\n");
+
+	    if (str1 != NULL)
+			{
+				if (fill(str2, atoi(str1), k) != k)
+				{
+					cout << "Ошибка чтения данных" << endl;
+					return false;
+				}	
+				k++;
+			}
 	}
-	if (counter != 11)
+
+	if (k != 11)
 	{
 		cout << "Not enough data in the file" << endl;
 		return false;
