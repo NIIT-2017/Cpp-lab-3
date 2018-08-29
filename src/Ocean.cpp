@@ -7,6 +7,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <cstring>
 #include <fstream>
 #include <stdio.h>
 #include <sys/ioctl.h>
@@ -16,6 +17,20 @@
 int _kbhit();
 
 Ocean::Ocean(const std::string & path)
+{
+	if (read(path))
+	{
+		cells = new Cell*[global.N];
+		for (unsigned int i = 0; i < global.N; i++)
+		{
+			cells[i] = new Cell[global.M];
+			for (unsigned int j = 0; j < global.M; j++)
+				cells[i][j].init(Pair{ j, i }, this);
+		}
+	}
+}
+
+bool Ocean::read(const std::string & path)
 {
 	using namespace std;
 	std::ifstream fin;
@@ -27,49 +42,109 @@ Ocean::Ocean(const std::string & path)
 	}
 	
 	string param[10];
-
-	unsigned int i{ 0 };
-	while (!fin.eof())
+	int counter = 1;
+	string s1;
+	char * str1, str2;
+	while(getline(fin, s1))
 	{
-		getline(fin, param[i++]);
+		if(!s1.size()) continue;
+		str1 = strtok((char*)s1.c_str(), " =");
+		str2 = strtok(NULL, "\n");
+		if (str1)
+			if (fill(str1, stoi(str2), counter) != counter)
+			{
+				cout << "Error reading the file" << endl;
+				return false;
+			}
+		counter++;
+			
 	}
-
-	global.N = stoi(param[0]);
-	global.M = stoi(param[1]);
-
-	global.LIVE_TIME_STONE = stoi(param[2]);
-	global.LIVE_TIME_CORAL = stoi(param[3]);
-	global.BREED_TIME_CORAL = stoi(param[4]);
-
-	global.LIVE_TIME_PREY = stoi(param[5]);
-	global.BREED_TIME_PREY = stoi(param[6]);
-	
-	global.LIVE_TIME_PREDATOR = stoi(param[7]);
-	global.BREED_TIME_PREDATOR = stoi(param[8]);
-	global.FOOD_TIME_PREDATOR = stoi(param[9]);
+	if (counter != 11)
+	{
+		cout << "Not enough data in the file" << endl;
+		return false;
+	}
 	fin.close();
-	
-	
-	cout << global.N << endl;
-	cout << global.M << endl;
-	cout << global.LIVE_TIME_STONE << endl;
-	cout << global.LIVE_TIME_CORAL << endl;
-	cout << global.BREED_TIME_CORAL << endl;
-	
-	cout << global.LIVE_TIME_PREY << endl;
-	cout << global.BREED_TIME_PREY << endl;
-	
-	cout << global.LIVE_TIME_PREDATOR << endl;
-	cout << global.BREED_TIME_PREDATOR << endl;
-	cout << global.FOOD_TIME_PREDATOR << endl;
-	
-	cells = new Cell*[global.N];
-	for (unsigned int i = 0; i < global.N; i++)
+	return true;
+}
+
+void Ocean::fill (const char * str, int value, int count)
+{
+	switch(count)
 	{
-		cells[i] = new Cell[global.M];
-		for (unsigned int j = 0; j < global.M; j++)
-			cells[i][j].init(Pair{ j, i }, this);
-	}
+		case 1:
+			if (!strcmp(str, "Length"))
+			{
+				global.N = value;
+				return count;
+			}
+			break;
+		case 2:
+			if (!strcmp(str, "Width"))
+			{
+				global.M = value;
+				return count;
+			}
+			break;
+		case 3:
+			if (!strcmp(str, "Live_Time_Stone"))
+			{
+				global.LIVE_TIME_STONE = value;
+				return count;
+			}
+			break;
+		case 4:
+			if (!strcmp(str, "Live_Time_Coral"))
+			{
+				global.LIVE_TIME_CORAL = value;
+				return count;
+			}
+			break;
+		case 5:
+			if (!strcmp(str, "Breed_Time_Coral"))
+			{
+				global.BREED_TIME_CORAL = value;
+				return count;
+			}
+			break;
+		case 6:
+			if (!strcmp(str, "Live_Time_Prey"))
+			{
+				global.LIVE_TIME_PREY = value;
+				return count;
+			}
+			break;
+		case 7:
+			if (!strcmp(str, "Breed_Time_Prey"))
+			{
+				global.BREED_TIME_PREY = value;
+				return count;
+			}
+			break;
+		case 8:
+			if (!strcmp(str, "Live_Time_Predator"))
+			{
+				global.LIVE_TIME_PREDATOR = value;
+				return count;
+			}
+			break;
+		case 9:
+			if (!strcmp(str, "Breed_Time_Predator"))
+			{
+				global.BREED_TIME_PREDATOR = value;
+				return count;
+			}
+			break;
+		case 10:
+			if (!strcmp(str, "Food_Time_Predator"))
+			{
+				global.FOOD_TIME_PREDATOR = value;
+				return count;
+			}
+			break;
+		default:
+			return 0;
+	}	
 }
 
 Ocean::~Ocean()
