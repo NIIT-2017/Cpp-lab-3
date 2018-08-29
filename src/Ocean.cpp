@@ -44,15 +44,16 @@ bool Ocean::read(const std::string & path)
 	
 	int counter = 1;
 	string s1;
-	char * str1, str2;
+	char * str1;
+	char * str2;
 	while(getline(fin, s1))
 	{
 		if(!s1.size()) continue;
 		str1 = strtok((char*)s1.c_str(), " =");
-		str2 = strtok(NULL, " \n");
+		str2 = strtok(NULL, "\n");
 		if (str1)
 			
-			if (fill(str1, atoi((string)str2), counter) != counter)
+			if (fill(str1, atoi(str2), counter) != counter)
 			{
 				cout << "Error reading the file" << endl;
 				return false;
