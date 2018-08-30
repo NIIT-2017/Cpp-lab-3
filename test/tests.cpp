@@ -1,12 +1,18 @@
+#include <gtest/gtest.h>
 #include "Ocean.h"
+#include "common.h"
 #include <ctime>
 #include <cstdlib>
 #include <iostream>
-#include <gtest/gtest.h>
 #include <set>
 #include <algorithm>
 #include "Coral.h"
-
+#include "Predator.h"
+#include "Prey.h"
+#include "Stone.h"
+#include "Cell.h"
+#include "setting.h"
+#include <iostream>
 
 TEST(lab3, ocean1)
 {
