@@ -1,5 +1,5 @@
-﻿const size_t NumRows = 20;//Rows
-const size_t NumColumns = 20;//Columns
+﻿const size_t NumRows = 10;//Rows
+const size_t NumColumns = 10;//Columns
 
 const size_t StoneNum = 3;//
 
