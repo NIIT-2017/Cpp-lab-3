@@ -20,7 +20,7 @@ TEST(lab3, ocean1)
     //EXPECT_EQ(Prey::getCount(), 10);
     //int end = atlantic->RunForeTest();
     //EXPECT_EQ(end, 100);
-    EXPECT_EQ(100, 100)
+    EXPECT_EQ(100, 100);
     //delete atlantic;
 }
 
@@ -33,7 +33,7 @@ TEST(lab3, ocean2)
     //int end = atlantic->RunForeTest();
     //EXPECT_EQ(end, 100);
     //delete atlantic;
-    EXPECT_EQ(100, 100)
+    EXPECT_EQ(100, 100);
 }
 
 TEST(lab3, ocean3)
@@ -46,5 +46,5 @@ TEST(lab3, ocean3)
     //int end = atlantic->RunForeTest();
     //EXPECT_EQ(end, 100);
     //delete atlantic;
-    EXPECT_EQ(100, 100)
+    EXPECT_EQ(100, 100);
 }
