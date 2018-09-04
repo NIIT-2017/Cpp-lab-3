@@ -15,3 +15,4 @@ const size_t PredatorlNum = 2;//
 const size_t Predator_Breeding_Cycle = 2;
 const size_t Predator_live_Time = 30;
 const size_t Predator_Hungry_Time = 30;//
+
