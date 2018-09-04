@@ -1,14 +1,10 @@
 #include "Stone.h"
 #include <iostream>
 //#include <qDebug>
-//#include <Qdebug>
+
 using namespace std;
 
 size_t Stone::Stonecount = 0;
-//char Stone::count2 = 'j';
-//char         Stone::name  = STONE_N;
-//char    Stone::name = '1';
-//char         Stone::name322 = '1';
 
 size_t Stone::getCount()
 {
