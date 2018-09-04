@@ -10,7 +10,7 @@
 #include <cstdlib>
 #include <algorithm>
 
-#include "setting.h"
+#include "Setting.h"
 
 TEST(lab3, ocean1)
 {
@@ -21,7 +21,7 @@ TEST(lab3, ocean1)
     //int end = atlantic->RunForeTest();
     //EXPECT_EQ(end, 100);
     EXPECT_EQ(100, 100);
-    //delete atlantic;
+    delete atlantic;
 }
 
 TEST(lab3, ocean2)
@@ -32,7 +32,7 @@ TEST(lab3, ocean2)
     //EXPECT_EQ(Predator::getCount(), 8);
     //int end = atlantic->RunForeTest();
     //EXPECT_EQ(end, 100);
-    //delete atlantic;
+    delete atlantic;
     EXPECT_EQ(100, 100);
 }
 
@@ -45,6 +45,6 @@ TEST(lab3, ocean3)
     //EXPECT_EQ(Prey::getCount(), 3);
     //int end = atlantic->RunForeTest();
     //EXPECT_EQ(end, 100);
-    //delete atlantic;
+    delete atlantic;
     EXPECT_EQ(100, 100);
 }

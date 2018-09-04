@@ -17,8 +17,8 @@ Ocean::Ocean()
     Setting seting;
     std::string NumRows = "NumRows";
     std::string NumColumns = "NumColumns";
-    size_t Row = seting.getParamFromFille(10);
-    size_t Columns = seting.getParamFromFille(10);
+    size_t Row = seting.getParamFromFille(NumRows);
+    size_t Columns = seting.getParamFromFille(NumColumns);
     cells = new Cell*[Row];
     for (size_t i = 0; i < Row; i++)
     {
@@ -33,8 +33,8 @@ Ocean::~Ocean()
     Setting seting;
     std::string NumRows = "NumRows";
     std::string NumColumns = "NumColumns";
-    size_t Row = seting.getParamFromFille(10);
-    size_t Columns = seting.getParamFromFille(10);
+    size_t Row = seting.getParamFromFille(NumRows);
+    size_t Columns = seting.getParamFromFille(NumColumns);
 
     for (size_t i = 0; i < Row; i++)
         delete[] cells[i];
@@ -48,8 +48,8 @@ void Ocean::print() const
     Setting seting;
     std::string NumRows = "NumRows";
     std::string NumColumns = "NumColumns";
-    size_t Row = seting.getParamFromFille(10);
-    size_t Columns = seting.getParamFromFille(10);
+    size_t Row = seting.getParamFromFille(NumRows);
+    size_t Columns = seting.getParamFromFille(NumColumns);
 
 
     system("cls");

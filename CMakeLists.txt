@@ -70,4 +70,9 @@ if (BUILD_TESTS)
     SET(CMAKE_C_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
   endif() #CMAKE_BUILD_TYPE STREQUAL "Coverage"
 
+  add_custom_command(TARGET task1 POST_BUILD
+COMMAND ${CMAKE_COMMAND} -E copy_if_different
+"${PROJECT_SOURCE_DIR}/test/Setting.txt"
+$<TARGET_FILE_DIR:task1>)
+
 endif()
