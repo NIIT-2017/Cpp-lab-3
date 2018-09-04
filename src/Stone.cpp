@@ -9,8 +9,12 @@ size_t Stone::Stonecount = 0;
 size_t Stone::getCount()
 {
     //return Stonecount2();
-    return Stonecount;
-
+   return Stonecount;
+   // Stone *stone = new Stone;
+    //size_t  i = stone->Stonecount2()-1;
+    //delete stone;
+    //return i;
+    //return Stonecount2();
 }
 
 char Stone::getName()
@@ -23,7 +27,7 @@ char Stone::getName()
 
 size_t &Stone::Stonecount2()
 {
-    size_t num =0;
+   //size_t num =0;
     static size_t* Stonecount2 = new size_t;
     return *Stonecount2;
     //Stonecount++;
@@ -33,9 +37,11 @@ Stone::Stone(Cell * c) :Object(c)
 {	
     Stonecount2()++;
     Stonecount++;
+    //Stonecount=Stonecount2();
 }
 Stone::~Stone()
 {
+    Stonecount--;
     this->Stonecount2()--;
     //Stonecount--;
 }

@@ -19,7 +19,7 @@ public:
     static size_t getCount();
     //int liveTime;
 	char getName();
-     unsigned int Stonecount3;//?
+   //  unsigned int Stonecount3;//?
      //unsigned int num ;//?
      void SetParamLive(const int liveTime, const size_t breeding_cycle){};
      void SetParamLive (const int liveTime, const size_t breeding_cycle, const int HungryTime ) {};
