@@ -4,6 +4,7 @@
 #include "Cell.h"
 class Coral : public Object
 {
+	static unsigned int count;
 	size_t breeding_cycle;
 	
 public:
