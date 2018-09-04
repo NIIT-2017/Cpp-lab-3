@@ -23,10 +23,7 @@ public:
 	Cell* getcells(int x, int y);
 	void addObject(Object*);
     void DeleteObject(Object*);
-    //template <typename T>
-    //template <typename T>
-    //Ocean::voidAdd(int count, int  type,class T)
-    voidAdd(int count, int  type);
+    void voidAdd(int count, int  type);
     unsigned int isEnd();
     bool NoMoreLiveOdject();
 };

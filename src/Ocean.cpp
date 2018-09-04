@@ -170,7 +170,7 @@ void Ocean::DeleteObject(Object * obj)
     stuff.erase(i);
 }
 
-Ocean::voidAdd(int count, int  type)
+void Ocean::voidAdd(int count, int  type)
 {
     Setting seting;
     std::string NumRows = "NumRows";
