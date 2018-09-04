@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include "setting.h"
+
 using namespace std;
 size_t Predator::count = 0;
 //char         Object::name = CORAL_N;

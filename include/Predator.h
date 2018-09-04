@@ -1,5 +1,6 @@
 #ifndef PREDATOR_H
 #define PREDATOR_H
+
 #include "common.h"
 #include "Object.h"
 #include "Cell.h"

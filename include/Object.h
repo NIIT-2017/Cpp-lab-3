@@ -13,7 +13,7 @@ protected:
     static size_t count;
 public:
 	explicit Object(Cell * = nullptr);
-	//static char name;//УБРАТЬ
+
 
 
 	void setCell(Cell*);

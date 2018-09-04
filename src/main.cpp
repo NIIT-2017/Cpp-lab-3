@@ -1,5 +1,5 @@
 #include "common.h"
-#include "ocean.h"
+#include "Оcean.h"
 #include <ctime>
 #include <cstdlib>
 #include <iostream>
