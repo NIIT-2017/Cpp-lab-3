@@ -26,11 +26,13 @@ size_t &Stone::Stonecount2()
     size_t num =0;
     static size_t* Stonecount2 = new size_t;
     return *Stonecount2;
+    //Stonecount++;
 }
 
 Stone::Stone(Cell * c) :Object(c)
 {	
     Stonecount2()++;
+    Stonecount++;
 }
 Stone::~Stone()
 {
