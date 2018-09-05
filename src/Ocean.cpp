@@ -152,8 +152,7 @@ bool Ocean::changeObject(Cell * c, Object * ob1, Object * ob2)
 	if (getConfigFileIsCorrect() == false)
 		return false;
 	cells[c->getY()][c->getX()].setObject(ob2);
-	std::vector<Object *>::iterator it = std::find(stuff.begin(), stuff.end(), ob1);
-	stuff.erase(it);   //remove(ob1);
+	stuff.remove(ob1);
 	stuff.push_back(ob2);
 	return true;
 }

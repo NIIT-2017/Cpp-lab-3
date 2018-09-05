@@ -14,8 +14,8 @@ class Ocean
 {
 private:
 	Cell **cells;
-	std::vector<Object *> stuff;
-	std::vector<Object *> stuff_buff;
+	std::list<Object *> stuff;
+	std::list<Object *> stuff_buff;
 	bool config_file_open;
 	bool correct_config_file;
 	size_t getNextParam(ifstream * file_config);
