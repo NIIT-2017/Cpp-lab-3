@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstddef>
+
 // Для хранения констант
 
 typedef size_t coord_t;
