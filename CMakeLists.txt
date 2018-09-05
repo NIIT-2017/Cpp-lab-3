@@ -1,3 +1,4 @@
+
 cmake_minimum_required(VERSION 2.8)
 
 # Make PROJECT_SOURCE_DIR, PROJECT_BINARY_DIR, and PROJECT_NAME available.
@@ -69,5 +70,15 @@ if (BUILD_TESTS)
     SET(CMAKE_CXX_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
     SET(CMAKE_C_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
   endif() #CMAKE_BUILD_TYPE STREQUAL "Coverage"
+  
+  add_custom_command(TARGET task1 POST_BUILD
+COMMAND ${CMAKE_COMMAND} -E copy_if_different
+"${PROJECT_SOURCE_DIR}/test/Test1.txt"
+$<TARGET_FILE_DIR:task1>)
+
+add_custom_command(TARGET task1 POST_BUILD
+COMMAND ${CMAKE_COMMAND} -E copy_if_different
+"${PROJECT_SOURCE_DIR}/test/Test2.txt"
+$<TARGET_FILE_DIR:task1>)
 
 endif()
