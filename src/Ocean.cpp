@@ -177,7 +177,7 @@ void Ocean::deleteObject(Cell * c, Object * ob1)
 {
 	if (getConfigFileIsCorrect() == false)
 		return;
-	stuff.erase(std::find(stuff.begin(), stuff.end(), ob1));
+	stuff.remove(ob1);
 }
 
 int Ocean::run()
