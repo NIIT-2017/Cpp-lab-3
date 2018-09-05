@@ -200,7 +200,7 @@ int Ocean::run()
 				obj->live();
 		}
 		clock_t now = clock();
-		while (clock() < now + CLOCKS_PER_SEC);
+		//while (clock() < now + CLOCKS_PER_SEC);
 		system("cls");
 		print();
 		cout << endl;

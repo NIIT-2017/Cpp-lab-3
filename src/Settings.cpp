@@ -1,4 +1,4 @@
-#pragma once
+
 #include <cstddef>
 
 size_t STONE_SIZE = 10;
