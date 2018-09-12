@@ -1,0 +1,11 @@
+10          // Y_MAX
+10          // X_MAX
+0          // STONE_SIZE
+0           // CORAL_SIZE
+5           // PREY_SIZE
+15          // PREDATOR_SIZE
+4           // CORAL_REPRODUCTION_TIME
+10          // PREY_LIVING_TIME
+3           // PREY_REPRODUCTION
+10          // PREDATOR_LIVING_TIME
+5           // PREDATOR_REPRODUCTION
