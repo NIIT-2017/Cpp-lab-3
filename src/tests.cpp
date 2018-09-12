@@ -1,16 +1,18 @@
 #include <gtest/gtest.h>
 #include "Ocean.h"
-#include "Cell.h"
-#include "Stone.h"
-#include "Coral.h"
-#include "Predator.h"
-#include "Prey.h"
 #include "common.h"
 #include <ctime>
 #include <cstdlib>
+#include <iostream>
+#include <set>
 #include <algorithm>
-
+#include "Coral.h"
+#include "Predator.h"
+#include "Prey.h"
+#include "Stone.h"
+#include "Cell.h"
 #include "setting.h"
+#include <iostream>
 
 TEST(lab3, ocean1)
 {
@@ -20,7 +22,6 @@ TEST(lab3, ocean1)
     EXPECT_EQ(Prey::getCount(), 10);
     int end = atlantic->RunForeTest();
     EXPECT_EQ(end, 100);
-    //EXPECT_EQ(100, 100);
     delete atlantic;
 }
 
@@ -33,18 +34,16 @@ TEST(lab3, ocean2)
     int end = atlantic->RunForeTest();
     EXPECT_EQ(end, 100);
     delete atlantic;
-    //EXPECT_EQ(100, 100);
 }
 
 TEST(lab3, ocean3)
 {
     Ocean *atlantic = new Ocean;
     atlantic->addObjects(1,2,3,4);
-  	EXPECT_EQ(Stone::getCount(), 1);
+    EXPECT_EQ(Stone::getCount(), 1);
     EXPECT_EQ(Coral::getCount(), 2);
     EXPECT_EQ(Prey::getCount(), 3);
     int end = atlantic->RunForeTest();
     EXPECT_EQ(end, 100);
     delete atlantic;
-    //EXPECT_EQ(100, 100);
 }
